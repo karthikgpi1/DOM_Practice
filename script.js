@@ -107,6 +107,7 @@
 
 //-----------cycle colors using set interval-----------
 
+
 // const colors = ['red', 'blue', 'green'];
 
 
@@ -124,9 +125,53 @@
 
 // const colorinterval = setInterval(cycleColors, 1000 * 2);
 
-// clearInterval(colorinterval);                    //stop the cycle
+//               // clearInterval(colorinterval);                    //stop the cycle
 
-//-----------------
+// //---------after 10s the cycling colors stop--------
+
+// setTimeout(() => clearInterval(colorinterval), 1000 * 10)
+
+
+
+//---------onclick-------
+
+
+// function clicked() {
+//     console.log(("this is clicked"));
+// }
+
+
+//----------click to colors cycle start and stop-------
+
+
+// const colors = ['red', 'blue', 'green'];
+
+
+// let index = 0;
+
+// const cycleColors = () => {
+//     console.log('cycleColors', index);
+//     if(index===3){                                   //  number of colors or colors.length
+//         index=0;
+//     }
+
+//     document.body.style.backgroundColor = colors[index];
+//     index++;
+// }
+
+//     let colorinterval;
+
+//  function cycleAllColors() {
+//     colorinterval = setInterval(cycleColors, 1000);
+//  }
+
+// function stopCycleColors() {
+//     console.log("stop");
+//     clearInterval(colorinterval);
+// }
+
+//--------------------
+
 
 
 
