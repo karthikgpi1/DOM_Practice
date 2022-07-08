@@ -71,4 +71,31 @@
            
 //            //add the element to the dom
  
-//  document.body.append(subHeading);          
+//  document.body.append(subHeading); 
+
+//-------------multi Command using backtick ``-----------------
+
+// const info = document.createElement("div");
+// info.setAttribute("class", "info");
+
+// info.innerHtml = `
+// <h1>hello</h1>
+// <h1>good morning</h1> `;
+
+// document.body.append(info);
+
+//-----------------------------------------------
+
+// const response = window.confirm("are you sure you want to leave");
+// console.log(response)
+
+//-----------prompt-----
+
+// const username = window.prompt('enter your name');
+// console.log(username);
+
+//-----------------settime out fn, timer(ms)---
+
+// setTimeout(() => console.log('karthik'), 4000);
+
+// setInterval(() => console.log('karthik mohan'), 1000);
