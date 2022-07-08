@@ -78,11 +78,16 @@
 // const info = document.createElement("div");
 // info.setAttribute("class", "info");
 
-// info.innerHtml = `
+// info.innerHTML = `
 // <h1>hello</h1>
 // <h1>good morning</h1> `;
 
 // document.body.append(info);
+
+//-----------------------------
+
+
+
 
 //-----------------------------------------------
 
@@ -99,3 +104,33 @@
 // setTimeout(() => console.log('karthik'), 4000);
 
 // setInterval(() => console.log('karthik mohan'), 1000);
+
+//-----------cycle colors using set interval-----------
+
+// const colors = ['red', 'blue', 'green'];
+
+
+// let index = 0;
+
+// const cycleColors = () => {
+//     console.log('cycleColors', index);
+//     if(index===3){                                   //  number of colors or colors.length
+//         index=0;
+//     }
+
+//     document.body.style.backgroundColor = colors[index];
+//     index++;
+// }
+
+// const colorinterval = setInterval(cycleColors, 1000 * 2);
+
+// clearInterval(colorinterval);                    //stop the cycle
+
+//-----------------
+
+
+
+
+
+
+
