@@ -48,10 +48,7 @@
 
 //--------------set attributes-----------------------------
 
-// const head2 = document.querySelectorAll('h1')[1];
-
-// head2.setAttribute('class', 'red');
-
+//  
 
 //------add placeholder
 
@@ -184,11 +181,35 @@
 //     console.log('typing', tweet.length, tweet);
 // }
 
-//--------------------------------
+//-------------------set and get item in the local storage-------------
+
+// window.localStorage.setItem('tweet', 'nice weather')
+
+// console.log(window.localStorage.getItem('tweet'));
+
+//---------refresh the page textarea its not gone---------------------------
+
+// document.querySelector(".tweet1").innerText = 
+// (window.localStorage.getItem('tweet'));      
+
+// updatecount(window.localStorage.getItem("tweet"));
 
 
+// function count(event) {
+        
+//     const tweet = event.target.value;
+//     updatecount(tweet);
+// }
+
+// function updatecount(tweet) {
+
+//     const counter = document.querySelector(".counter");
+//     counter.innerText = `${tweet.length}/20`
+//     window.localStorage.setItem("tweet", tweet);          
+       
 
 
+//----------------------------
 
 
 
