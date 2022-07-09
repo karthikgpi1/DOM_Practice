@@ -170,7 +170,22 @@
 //     clearInterval(colorinterval);
 // }
 
-//--------------------
+
+
+//-----------------oninput and counting the letters------------------------------------
+
+// function count(event) {
+
+//     // console.log('typing', event.target.value);  //event.target - who created the event
+  
+//     const tweet = event.target.value;       //counting typing
+//     const counter = document.querySelector(".counter");
+//     counter.innerText = `${tweet.length}/10`
+//     console.log('typing', tweet.length, tweet);
+// }
+
+//--------------------------------
+
 
 
 
