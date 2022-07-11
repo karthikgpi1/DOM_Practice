@@ -207,9 +207,54 @@
 //     counter.innerText = `${tweet.length}/20`
 //     window.localStorage.setItem("tweet", tweet);          
        
+// }
+
+//--------browser step---------------
+
+//parse
+//dom tree
+//resources
+//styling
+//layout
+//paint
+
+//----------synchronous---------
+
+//--------js is a single thread so its step by step execution---------------
+
+// console.log("start");
+
+// for (let i = 0; i < 1000; i++) {
+//     console.log("loop is running..");    //only after the end of the loop
+// }                                        //mid and end are excute in console
+
+// console.log("mid");
+
+// console.log("end");
+
+//----------asynchronous------------------
+
+// console.log("first");
+
+//          //setTimeout(handlerOrCallback, time);
+
+// setTimeout(function() {
+//     console.log("timeout function");       
+// },1000);
+
+// console.log("end");
+
+//-------------------------------
 
 
-//----------------------------
+
+
+
+
+
+
+
+
 
 
 
