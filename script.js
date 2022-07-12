@@ -244,10 +244,29 @@
 
 // console.log("end");
 
-//-------------------------------
+//------------promise-------------------
 
+// const drive = new Promise((resolve, reject) => {          //use capitalize like Promise
+//     let age = 17;
 
+//     if (age >=18) {
+//         resolve('eligible to drive');
+//     }else{
+//         reject('not eligible to drive');
+//     }
+// });
 
+// // use a Promise -95% eg: fetch
+
+// drive
+// //   .then((msg) => console.log(msg));   //skip  => promise object
+//       // or passing value
+//   .then((msg) => "Awesome you are " + msg ) //if age 18 or 18 above .then is execute
+//   .then((newMsg) => console.log(newMsg))
+
+//   .catch((details) => console.log(details));  //if age is not 18 .catch is execute
+
+//-----------------------------------------=
 
 
 
