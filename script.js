@@ -266,12 +266,52 @@
 
 //   .catch((details) => console.log(details));  //if age is not 18 .catch is execute
 
-//-----------------------------------------=
 
 
+//--------------api---------------------------
 
 
+    // fetch('https://restcountries.com/v3.1/all')
+    // .then((resp) => resp.json())
+    // .then((result) => {
+    //     result.forEach((element) => {
+    //         let { name, religion} = element;
+    //         console.log(name, religion);
+    //     }); 
+    // })
 
+    // .catch((err) => console.log(err));
+
+//-----fetch-----
+
+(fetch("https://restcountries.eu/rest/v2/all")
+    .then((data) => data.json())
+    .then((countries) => countries.forEach((country) => createFlag(country)))
+    .catch((errMsg) => console.log(errMsg)));
+
+// countriesInfo.forEach((country) => createFlag(country));
+
+  function createFlag ({name, flag, population, region, capital}) {
+    // const {name, flag, population, region, capital} = country;
+const info = document.createElement("div");
+info.setAttribute("class", "container");
+
+info.innerHTML = `
+<div class = "flag-container">
+<img class = "flag" src = ${flag} width = "250px" height = "150px" />
+</div>
+
+<div class = "details">
+  <h3>${name}</h3>
+  <p><b>Population:</b>${population}</p>
+  <p><b>Region:</b>${region}</p>
+  <p><b>Capital:</b>${capital}</p>
+</div>`; 
+
+document.body.append(info);
+}
+
+//---------------------------
 
 
 
