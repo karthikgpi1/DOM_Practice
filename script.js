@@ -268,37 +268,36 @@
 
 
 
-//--------------api---------------------------
 
+//-----fetch---------------------------------------
 
-    // fetch('https://restcountries.com/v3.1/all')
-    // .then((resp) => resp.json())
-    // .then((result) => {
-    //     result.forEach((element) => {
-    //         let { name, religion} = element;
-    //         console.log(name, religion);
-    //     }); 
-    // })
+// (fetch('https://restcountries.com/v3.1/all')
+//     .then((data) => data.json())
+//     .then((countries) => countries.forEach((country) => createFlag(country)))
+//     .catch((errMsg) => console.log(errMsg)));
 
-    // .catch((err) => console.log(err));
+//----------another method-------------
 
-//-----fetch-----
+fetch('https://restcountries.com/v3.1/all')
+    .then((resp) => resp.json())
+    .then((countries) => {
+        countries.forEach((country) => {            
+            createFlag(country)
+            console.log(country);
+        }); 
+    })
+    .catch((err) => console.log(err));
+countriesInfo.forEach((country) => createFlag(country));
 
-(fetch("https://restcountries.eu/rest/v2/all")
-    .then((data) => data.json())
-    .then((countries) => countries.forEach((country) => createFlag(country)))
-    .catch((errMsg) => console.log(errMsg)));
+//-----------------------
 
-// countriesInfo.forEach((country) => createFlag(country));
-
-  function createFlag ({name, flag, population, region, capital}) {
-    // const {name, flag, population, region, capital} = country;
+  function createFlag ({flags, name, population, region, capital}) {
 const info = document.createElement("div");
 info.setAttribute("class", "container");
 
 info.innerHTML = `
 <div class = "flag-container">
-<img class = "flag" src = ${flag} width = "250px" height = "150px" />
+<img class = "flag" src = ${flags} width = "250px" height = "150px" />
 </div>
 
 <div class = "details">
