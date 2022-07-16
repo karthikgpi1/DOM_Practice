@@ -341,7 +341,20 @@
 //   .then(x => countdown(--x))
 //   .catch(msg => console.log(msg))
 
+//------async/await----------------------
 
+// (fetch('https://restcountries.com/v3.1/all')
+//     .then((data) => data.json())
+//     .then(countries => console.log(countries)))
+
+
+// async function niceMessage(){
+//     const data = await fetch('https://restcountries.com/v3.1/all');
+//     const countries = await data.json();
+//     console.log(countries);
+// }
+
+// niceMessage();
 
 
 
