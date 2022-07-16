@@ -278,40 +278,68 @@
 
 //----------another method-------------
 
-fetch('https://restcountries.com/v3.1/all')
-    .then((resp) => resp.json())
-    .then((countries) => {
-        countries.forEach((country) => {            
-            createFlag(country)
-            console.log(country);
-        }); 
-    })
-    .catch((err) => console.log(err));
-countriesInfo.forEach((country) => createFlag(country));
+// fetch(`https://restcountries.com/v3.1/all`)
+//     .then((resp) => resp.json())
+//     .then((countries) => {
+//         countries.forEach((country) => {            
+//             createFlag(country)
+//             console.log(country);
+//         }); 
+//     })
+//     .catch((err) => console.log(err));
+// //-----------------------
 
-//-----------------------
+//   function createFlag ({flags, name, population, region, capital}) {
+// const info = document.createElement("div");
+// info.setAttribute("class", "container");
 
-  function createFlag ({flags, name, population, region, capital}) {
-const info = document.createElement("div");
-info.setAttribute("class", "container");
+// info.innerHTML = `
+// <div class = "flag-container">
+// <img class ="flag" src =${flags.svg} width = "250px" height = "150px">
+// </div>
 
-info.innerHTML = `
-<div class = "flag-container">
-<img class = "flag" src = ${flags} width = "250px" height = "150px" />
-</div>
+// <div class = "details">
+//   <h2> ${name.common} </h2>
+//   <p><b>Population:</b>${population}</p>
+//   <p><b>Region:</b>${region}</p>
+//   <p><b>Capital:</b>${capital}</p>
+// </div>`; 
 
-<div class = "details">
-  <h3>${name}</h3>
-  <p><b>Population:</b>${population}</p>
-  <p><b>Region:</b>${region}</p>
-  <p><b>Capital:</b>${capital}</p>
-</div>`; 
+// document.body.append(info);
+// }
 
-document.body.append(info);
-}
+//---------create a promise with setTimeout inside------------------
+// const countdown = () => new Promise((resolve, reject) => {
+//     let num = 3;
+//     if (num > 0) {
+//         setTimeout(() => resolve(num), 1000);
+//     }else {
+//         reject ("countown completed");
+//     }
+// });
 
-//---------------------------
+// countdown()
+// .then((n) => { console.log(n);     //console log always define undefine value
+//     return n;
+// })
+// .then((x) => console.log('x', x));
 
+//---------convert call hell into promise chain---------------------
+
+// const countdown = (num) => new Promise((resolve, reject) => {
+//     // let num = 3;
+//     if (num > 0) {
+//         setTimeout(() => {console.log(num); resolve(num)}, 1000);
+//     }else {
+//         reject ("countown completed");
+//     }
+// });
+
+// countdown(3)
+//   .then(x => countdown(--x))
+//   .then(x => countdown(--x))
+//   .then(x => countdown(--x))
+//   .catch(msg => console.log(msg))
 
 
 

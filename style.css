@@ -5,17 +5,19 @@
 /* .red{
     color: crimson;
 } */
-body{
+/* body{
     margin: 20px;
     font-family: poppins;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    background-color: rgb(219, 219, 210) ;
 }
 
 .container{
-    display: inline-block;
+    display: grid;
     align-items: center;
-    /* justify-content: center; */
-    box-shadow: 0 6px 6px 0 rgba(0,0,0,0.4);
-    border-radius: 3px;
+    box-shadow: 0 6px 10px 0 rgba(0,0,0,0.4);
+    border-radius: 8px;
     flex-direction: column;
     width: 250px;
     height: 320px;
@@ -23,15 +25,19 @@ body{
     margin-right: 16px;
     margin-bottom: 16px;
     margin-top: 5px;
+    background-color: rgb(255, 255, 255);
+    object-fit: cover;
 }
 
 .flag-container{
-    width: 260px;
-    
+    width: 260px;  
+}
+.flag-container img{
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
 }
 .details{
     text-align: left;
-    /* margin-left: 40px; */
     width: 100%;
     padding: 0 0 5px 10px;
-}
+} */
