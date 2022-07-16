@@ -356,6 +356,29 @@
 
 // niceMessage();
 
+//-------async/await example--------------
+
+const drive = (age) => new Promise((resolve, reject) => {          //use capitalize like Promise
+    
+
+    if (age >=18) {
+        resolve('eligible to drive');
+    }else{
+        reject('not eligible to drive');
+    }
+});
+
+async function niceMessage(){
+  try {
+        const msg = await drive(12);
+        console.log(msg);
+    }catch(errmsg){
+        console.log(errmsg);
+    }
+}
+
+niceMessage();
+
 
 
 
