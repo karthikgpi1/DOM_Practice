@@ -392,6 +392,62 @@
 //     .catch((err) => console.log(err));
 
 //--------------async/await example using mock api--------------------------------------
+
+// async function getusers(){
+//   const data = await fetch(
+//     "https://62d25db3afb0b03fc5a57872.mockapi.io/users",
+//     {method: "GET"}
+//     );
+//   const users = await data.json();
+//   console.log(users);
+//   document.body.innerHTML ='';
+//   users.forEach(user => createUser(user));
+// }
+// //-----------------------
+
+//   function createUser ({name, createdAt, avatar,id}) {
+// const info = document.createElement("div");
+// info.setAttribute("class", "container");
+
+// info.innerHTML = `
+// <div class ="container1">
+//     <div class = "user-container">
+//       <img class ="user" src =${avatar} width = "250px" height = "150px">
+//     </div>
+    
+//     <div class = "details">
+//       <h4> ${name} </h4>
+//       <p>${createdAt}</p>
+//       <button onclick ="deleteUser(${id})">Delete</button>
+//     </div>
+//     <div class = "id">
+//       <p>ID:${id}</p>
+//     </div>
+// </div>`; 
+
+// document.body.append(info);
+// }
+
+// // getusers();
+
+// //delete user id
+
+// async function deleteUser(id) {
+//   const data = await fetch(
+//     `https://62d25db3afb0b03fc5a57872.mockapi.io/users/${id}`,
+//      { method: "DELETE" }
+//   );
+
+
+// const user = await data.json();
+// console.log(user);
+// getusers();
+// }
+
+// deleteUser("11")
+
+//---------------------update user---------------------------------------------------
+
 async function getusers(){
   const data = await fetch(
     "https://62d25db3afb0b03fc5a57872.mockapi.io/users",
@@ -399,7 +455,7 @@ async function getusers(){
     );
   const users = await data.json();
   console.log(users);
-  document.body.innerHTML ='';
+  document.querySelector(".user-list").innerHTML =``;
   users.forEach(user => createUser(user));
 }
 //-----------------------
@@ -424,7 +480,7 @@ info.innerHTML = `
     </div>
 </div>`; 
 
-document.body.append(info);
+ document.querySelector(".user-list").append(info)
 }
 
 // getusers();
@@ -445,5 +501,20 @@ getusers();
 
 deleteUser("11")
 
-//-----------------------
 
+//--------update custom user data----
+
+fetch(
+  "https://62d25db3afb0b03fc5a57872.mockapi.io/users",
+  {method: "POST",
+    headers:{
+      "content-Type": "application/json"
+    },
+     body: JSON.stringify({
+      name: "karthik",
+      avatar: "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/478.jpg",
+      createdAt: new Date()
+     })
+    })
+    .then((data) => data.json())
+    .then((user) => console.log(user));
