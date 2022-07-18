@@ -393,10 +393,13 @@
 
 //--------------async/await example using mock api--------------------------------------
 async function getusers(){
-  const data = await fetch(`https://62d25db3afb0b03fc5a57872.mockapi.io/users`);
+  const data = await fetch(
+    "https://62d25db3afb0b03fc5a57872.mockapi.io/users",
+    {method: "GET"}
+    );
   const users = await data.json();
   console.log(users);
-
+  document.body.innerHTML ='';
   users.forEach(user => createUser(user));
 }
 //-----------------------
@@ -442,5 +445,5 @@ getusers();
 
 deleteUser("11")
 
-
+//-----------------------
 
