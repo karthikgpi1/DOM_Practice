@@ -414,6 +414,7 @@ info.innerHTML = `
     <div class = "details">
       <h4> ${name} </h4>
       <p>${createdAt}</p>
+      <button onclick ="deleteUser(${id})">Delete</button>
     </div>
     <div class = "id">
       <p>ID:${id}</p>
@@ -423,9 +424,23 @@ info.innerHTML = `
 document.body.append(info);
 }
 
+// getusers();
+
+//delete user id
+
+async function deleteUser(id) {
+  const data = await fetch(
+    `https://62d25db3afb0b03fc5a57872.mockapi.io/users/${id}`,
+     { method: "DELETE" }
+  );
+
+
+const user = await data.json();
+console.log(user);
 getusers();
+}
 
-
+deleteUser("11")
 
 
 
