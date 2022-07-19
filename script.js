@@ -390,6 +390,12 @@
 //         }); 
 //     })
 //     .catch((err) => console.log(err));
+//-----CRUD---------
+
+//c - create - POST
+//R - read - GET
+//U - update - PUT
+//D - delete - DELETE
 
 //--------------async/await example using mock api--------------------------------------
 
@@ -485,7 +491,7 @@ info.innerHTML = `
 
 // getusers();
 
-//delete user id
+//--------delete user id-------
 
 async function deleteUser(id) {
   const data = await fetch(
@@ -499,22 +505,45 @@ console.log(user);
 getusers();
 }
 
-deleteUser("11")
+deleteUser('10');
 
+// -----add users-----------
+
+ async function adduser(){
+  console.log("adding user....");
+  const name = document.querySelector('.add-username').value;
+  const avatar = document.querySelector('.add-avatar').value;
+  console.log(name, avatar);
+
+  const data = await fetch(
+    "https://62d25db3afb0b03fc5a57872.mockapi.io/users",
+    {method: "POST",
+      headers:{
+        "Content-Type": "application/json"
+      },
+       body: JSON.stringify({
+        name: name,
+        avatar: avatar,
+        createdAt: new Date()
+       })
+      });
+
+      getusers();
+ }
 
 //--------update custom user data----
 
-fetch(
-  "https://62d25db3afb0b03fc5a57872.mockapi.io/users",
-  {method: "POST",
-    headers:{
-      "content-Type": "application/json"
-    },
-     body: JSON.stringify({
-      name: "karthik",
-      avatar: "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/478.jpg",
-      createdAt: new Date()
-     })
-    })
-    .then((data) => data.json())
-    .then((user) => console.log(user));
+// fetch(
+//   "https://62d25db3afb0b03fc5a57872.mockapi.io/users",
+//   {method: "POST",
+//     headers:{
+//       "content-Type": "application/json"
+//     },
+//      body: JSON.stringify({
+//       name: "karthik",
+//       avatar: "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/478.jpg",
+//       createdAt: new Date()
+//      })
+//     })
+//     .then((data) => data.json())
+//     .then((user) => console.log(user));
